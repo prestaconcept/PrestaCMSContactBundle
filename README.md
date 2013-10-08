@@ -29,3 +29,7 @@ Thanks to
 Released under the MIT License
 
 [3]: https://groups.google.com/forum/?hl=fr&fromgroups#!forum/prestacms-devs
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/prestaconcept/prestacmscontactbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
