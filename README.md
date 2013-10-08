@@ -1,6 +1,10 @@
 PrestaCMSContactBundle
 ======================
 
+[![Build Status](https://secure.travis-ci.org/prestaconcept/PrestaCMSContactBundle.png?branch=master)](http://travis-ci.org/prestaconcept/PrestaCMSContactBundle)
+[![Latest Stable Version](https://poser.pugx.org/presta/cms-contact-bundle/v/stable.png)](https://packagist.org/packages/presta/cms-contact-bundle)
+[![Total Downloads](https://poser.pugx.org/presta/cms-contact-bundle/downloads.png)](https://packagist.org/packages/presta/cms-contact-bundle)
+
 #Overview #
 
 [WIP] Contact for PrestaCMS
