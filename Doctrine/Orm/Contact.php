@@ -17,5 +17,4 @@ use Presta\CMSContactBundle\Model\Contact as ModelContact;
  */
 class Contact extends ModelContact
 {
-
 }
