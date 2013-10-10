@@ -9,10 +9,11 @@
  */
 namespace Presta\CMSContactBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -31,7 +32,32 @@ class PrestaCMSContactExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        $hasProvider = false;
+        if ($config['persistence']['orm']['enabled']) {
+            $this->loadOrmProvider($config['persistence']['orm'], $loader, $container);
+            $hasProvider = true;
+        }
+
+        if (!$hasProvider) {
+            throw new InvalidConfigurationException(
+                'PrestaCMSContactBundle, you need to either enable one of the persistence layers'
+            );
+        }
+    }
+
+    /**
+     * Load configuration for Doctrine ORM persistence layer
+     *
+     * @param array             $config
+     * @param XmlFileLoader     $loader
+     * @param ContainerBuilder  $container
+     */
+    public function loadOrmProvider($config, XmlFileLoader $loader, ContainerBuilder $container)
+    {
+        $container->setParameter($this->getAlias() . '.persistence.orm.manager_name', $config['manager_name']);
+        $container->setParameter($this->getAlias() . '.backend_type_orm', true);
     }
 }

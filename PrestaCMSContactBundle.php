@@ -9,6 +9,8 @@
  */
 namespace Presta\CMSContactBundle;
 
+use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -16,4 +18,32 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class PrestaCMSContactBundle extends Bundle
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $this->addRegisterMappingsPass($container);
+    }
+
+    /**
+     * @param ContainerBuilder $container
+     */
+    private function addRegisterMappingsPass(ContainerBuilder $container)
+    {
+        if (class_exists('Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass')) {
+            $container->addCompilerPass(
+                DoctrineOrmMappingsPass::createXmlMappingDriver(
+                    array(
+                        realpath($this->getPath()  . '/Resources/config/doctrine-model') => 'Presta\CMSContactBundle\Model',
+                        realpath($this->getPath()  . '/Resources/config/doctrine-orm')   => 'Presta\CMSContactBundle\Doctrine\Orm'
+                    ),
+                    array('presta_cms_contact.persistence.orm.manager_name'),
+                    'presta_cms_contact.backend_type_orm'
+                )
+            );
+        }
+    }
 }
