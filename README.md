@@ -2,14 +2,31 @@ PrestaCMSContactBundle
 ======================
 
 [![Build Status](https://secure.travis-ci.org/prestaconcept/PrestaCMSContactBundle.png?branch=master)](http://travis-ci.org/prestaconcept/PrestaCMSContactBundle)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/prestaconcept/PrestaCMSContactBundle/badges/quality-score.png?s=96c69229732e1e8856461bd649df4452d415e803)](https://scrutinizer-ci.com/g/prestaconcept/PrestaCMSContactBundle/)
 [![Latest Stable Version](https://poser.pugx.org/presta/cms-contact-bundle/v/stable.png)](https://packagist.org/packages/presta/cms-contact-bundle)
 [![Total Downloads](https://poser.pugx.org/presta/cms-contact-bundle/downloads.png)](https://packagist.org/packages/presta/cms-contact-bundle)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e35671f4-a083-4780-b435-c85b9ce3c56c/big.png)](https://insight.sensiolabs.com/projects/e35671f4-a083-4780-b435-c85b9ce3c56c)
+
 #Overview #
 
-[WIP] Contact for PrestaCMS
+[WIP] PrestaCMSContactBundle adds contact management to PrestaCMS.
+
+:speech_balloon: If you want to have some informations about the projet progression you can register to our [google group][3]
 
 
+## Documentation ##
+
+:book: Documentation is available on [prestaconcept.github.io][4]
+
+## Demonstration ##
+
+For a ready to use demonstration of PrestaCMS you should check the [prestacms-sandox available on github][2].
+
+Sandbox is also deployed for a live demonstration :
+
+-   [Frontend site][5]
+-   [Administration Site][6]
 
 
 ## Ask for help ##
@@ -37,3 +54,9 @@ Released under the MIT License
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/prestaconcept/prestacmscontactbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
+[2]: https://github.com/prestaconcept/prestacms-sandbox
+[3]: https://groups.google.com/forum/?hl=fr&fromgroups#!forum/prestacms-devs
+[4]: http://prestaconcept.github.io/presta-cms-contact/
+[5]: http://sandbox.prestacms.com/
+[6]: http://sandbox.prestacms.com/admin
