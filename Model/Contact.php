@@ -10,6 +10,8 @@
 
 namespace Presta\CMSContactBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
  */
@@ -32,9 +34,15 @@ abstract class Contact
      */
     protected $createdAt;
 
+    /**
+     * @var Message[]
+     */
+    protected $messages;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
+        $this->messages  = new ArrayCollection();
     }
 
     /**
@@ -101,5 +109,21 @@ abstract class Contact
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @param ArrayCollection $messages
+     */
+    public function setMessages($messages)
+    {
+        $this->messages = $messages;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
     }
 }

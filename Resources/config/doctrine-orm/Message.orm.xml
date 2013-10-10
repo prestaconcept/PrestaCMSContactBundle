@@ -4,20 +4,15 @@
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
     https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
 
-    <entity name="Presta\CMSContactBundle\Doctrine\Orm\Contact" table="presta_cms_contact">
+    <entity name="Presta\CMSContactBundle\Doctrine\Orm\Message" table="presta_cms_contact_message">
 
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
 
-        <one-to-many field="messages" target-entity="Presta\CMSContactBundle\Doctrine\Orm\Message" mapped-by="contact">
-            <cascade>
-                <cascade-persist/>
-            </cascade>
-            <order-by>
-                <order-by-field name="createdAt" direction="ASC" />
-            </order-by>
-        </one-to-many>
+        <many-to-one field="contact" target-entity="Presta\CMSContactBundle\Doctrine\Orm\Contact" inversed-by="messages">
+            <join-column name="contact_id" referenced-column-name="id" />
+        </many-to-one>
 
     </entity>
 
