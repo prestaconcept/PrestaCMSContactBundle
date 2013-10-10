@@ -34,6 +34,7 @@ class PrestaCMSContactExtension extends Extension
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        $loader->load('admin.xml');
 
         $hasProvider = false;
         if ($config['persistence']['orm']['enabled']) {
@@ -59,5 +60,6 @@ class PrestaCMSContactExtension extends Extension
     {
         $container->setParameter($this->getAlias() . '.persistence.orm.manager_name', $config['manager_name']);
         $container->setParameter($this->getAlias() . '.backend_type_orm', true);
+        $loader->load('persistence-orm.xml');
     }
 }

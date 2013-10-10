@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="presta_cms_contact.admin.contact.class">Presta\CMSContactBundle\Admin\ContactAdmin</parameter>
+        <parameter key="presta_cms_contact.admin.contact.controller">SonataAdminBundle:CRUDController</parameter>
+    </parameters>
+
+    <services>
+
+
+        <service id="presta_cms_contact.admin.contact" class="%presta_cms_contact.admin.contact.class%">
+            <tag name="sonata.admin" manager_type="orm" group="presta_cms_contact" label_catalogue="PrestaCMSContactBundle" label="dashboard.label_contact"/>
+            <argument/>
+            <argument>%presta_cms_contact.model.contact.class%</argument>
+            <argument />
+        </service>
+
+    </services>
+
+</container>

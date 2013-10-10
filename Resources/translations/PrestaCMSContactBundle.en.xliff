@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="CmfMenuBundle.en.xliff">
+        <body>
+            <trans-unit id="presta_cms_contat">
+                <source>presta_cms_contat</source>
+                <target>Contacts</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_contact">
+                <source>dashboard.label_contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="form.fieldset.label_general">
+                <source>form.fieldset.label_general</source>
+                <target>General</target>
+            </trans-unit>
+            <trans-unit id="form.label.name">
+                <source>form.label.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="form.label.email">
+                <source>form.label.email</source>
+                <target>Email</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>
