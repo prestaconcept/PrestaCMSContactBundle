@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="presta_cms_contact.persistence.manager_type">doctrine_orm</parameter>
         <parameter key="presta_cms_contact.model.contact.class">Presta\CMSContactBundle\Doctrine\Orm\Contact</parameter>
+        <parameter key="presta_cms_contact.model.message.class">Presta\CMSContactBundle\Doctrine\Orm\Message</parameter>
     </parameters>
 
 </container>

@@ -6,16 +6,26 @@
 
     <parameters>
         <parameter key="presta_cms_contact.admin.contact.class">Presta\CMSContactBundle\Admin\ContactAdmin</parameter>
-        <parameter key="presta_cms_contact.admin.contact.controller">SonataAdminBundle:CRUDController</parameter>
+        <parameter key="presta_cms_contact.admin.message.class">Presta\CMSContactBundle\Admin\MessageAdmin</parameter>
     </parameters>
 
     <services>
 
 
         <service id="presta_cms_contact.admin.contact" class="%presta_cms_contact.admin.contact.class%">
-            <tag name="sonata.admin" manager_type="orm" group="presta_cms_contact" label_catalogue="PrestaCMSContactBundle" label="dashboard.label_contact"/>
+            <tag name="sonata.admin" manager_type="orm" group="presta_cms_contact" label_catalogue="PrestaCMSContactBundle" label="title.contact"/>
             <argument/>
             <argument>%presta_cms_contact.model.contact.class%</argument>
+            <argument />
+            <call method="addChild">
+                <argument type="service" id="presta_cms_contact.admin.message" />
+            </call>
+        </service>
+
+        <service id="presta_cms_contact.admin.message" class="%presta_cms_contact.admin.message.class%">
+            <tag name="sonata.admin" manager_type="orm" group="presta_cms_contact" label_catalogue="PrestaCMSContactBundle" label="title.message"/>
+            <argument/>
+            <argument>%presta_cms_contact.model.message.class%</argument>
             <argument />
         </service>
 

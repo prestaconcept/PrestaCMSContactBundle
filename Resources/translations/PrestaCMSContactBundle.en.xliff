@@ -6,9 +6,21 @@
                 <source>presta_cms_contat</source>
                 <target>Contacts</target>
             </trans-unit>
-            <trans-unit id="dashboard.label_contact">
-                <source>dashboard.label_contact</source>
+            <trans-unit id="title.contact">
+                <source>title.contact</source>
                 <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="title.message">
+                <source>title.message</source>
+                <target>Message</target>
+            </trans-unit>
+            <trans-unit id="sidemenu.link_contact_edit">
+                <source>sidemenu.link_contact_edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="sidemenu.link_contact_message_list">
+                <source>sidemenu.link_contact_message_list</source>
+                <target>Messages</target>
             </trans-unit>
             <trans-unit id="form.fieldset.label_general">
                 <source>form.fieldset.label_general</source>
@@ -22,7 +34,6 @@
                 <source>form.label.email</source>
                 <target>Email</target>
             </trans-unit>
-
         </body>
     </file>
 </xliff>

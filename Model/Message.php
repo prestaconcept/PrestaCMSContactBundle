@@ -32,11 +32,19 @@ class Message
     protected $createdAt;
 
     /**
-     * @param $id
+     * @return string
      */
-    public function setId($id)
+    public function __toString()
     {
-        $this->id = $id;
+        return (string)$this->getContact()->__toString() . ' - ' . $this->getId();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -69,6 +77,14 @@ class Message
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortContent()
+    {
+        return substr($this->content, 0, 150) . '...';
     }
 
     /**

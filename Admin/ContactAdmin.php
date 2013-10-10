@@ -9,10 +9,12 @@
  */
 namespace Presta\CMSContactBundle\Admin;
 
+use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
+use Knp\Menu\ItemInterface as MenuItemInterface;
 
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
@@ -54,5 +56,28 @@ class ContactAdmin extends Admin
                 ->add('name', null, array('label' => 'form.label.name'))
                 ->add('email', 'email', array('label' => 'form.label.email'))
             ->end();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureSideMenu(MenuItemInterface $menu, $action, AdminInterface $childAdmin = null)
+    {
+        $admin = $this->isChild() ? $this->getParent() : $this;
+        $id = $admin->getRequest()->get('id');
+        if ($id > 0) {
+
+            /** @var $object Contact */
+            $object = $this->getSubject();
+
+            $menu->addChild(
+                $this->trans('sidemenu.link_contact_edit'),
+                array('uri' => $admin->generateUrl('edit', array('id' => $id)))
+            );
+            $menu->addChild(
+                $this->trans('sidemenu.link_contact_message_list'),
+                array('uri' => $admin->generateUrl('presta_cms_contact.admin.message.list', array('id' => $id)))
+            );
+        }
     }
 }
