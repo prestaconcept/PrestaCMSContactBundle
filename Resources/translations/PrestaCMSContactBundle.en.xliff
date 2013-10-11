@@ -34,6 +34,10 @@
                 <source>form.label.email</source>
                 <target>Email</target>
             </trans-unit>
+            <trans-unit id="form.label.message">
+                <source>form.label.email</source>
+                <target>Message</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
