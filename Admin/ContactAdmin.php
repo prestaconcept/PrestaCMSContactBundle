@@ -34,7 +34,8 @@ class ContactAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name');
+            ->add('name')
+            ->add('email');
     }
 
     /**
@@ -43,7 +44,8 @@ class ContactAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name');
+            ->addIdentifier('name')
+            ->add('email');
     }
 
     /**
@@ -65,11 +67,8 @@ class ContactAdmin extends Admin
     {
         $admin = $this->isChild() ? $this->getParent() : $this;
         $id = $admin->getRequest()->get('id');
+
         if ($id > 0) {
-
-            /** @var $object Contact */
-            $object = $this->getSubject();
-
             $menu->addChild(
                 $this->trans('sidemenu.link_contact_edit'),
                 array('uri' => $admin->generateUrl('edit', array('id' => $id)))
