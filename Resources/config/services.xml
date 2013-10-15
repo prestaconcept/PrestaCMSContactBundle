@@ -5,11 +5,39 @@
 
     <parameters>
         <parameter key="presta_cms_contact.form.contact.class">Presta\CMSContactBundle\Form\Type\ContactType</parameter>
+        <parameter key="presta_cms_contact.block.contact.class">Presta\CMSContactBundle\Block\ContactBlockService</parameter>
+        <parameter key="presta_cms_contact.strategy.email.class">Presta\CMSContactBundle\Strategy\EmailStrategy</parameter>
     </parameters>
 
     <services>
         <service id="presta_cms_contact.form.contact" class="%presta_cms_contact.form.contact.class%">
             <tag name="form.type" alias="presta_cms_contact"/>
+        </service>
+
+        <service id="presta_cms_contact.block.contact" class="%presta_cms_contact.block.contact.class%" parent="presta_cms.block.base">
+            <tag name="sonata.block" />
+            <tag name="presta_cms.block" />
+            <call method="setFormFactory">
+                <argument type="service" id="form.factory" />
+            </call>
+        </service>
+
+        <service id="presta_cms_contact.strategy.email" class="%presta_cms_contact.strategy.email.class%">
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+            <call method="setTemplateEngine">
+                <argument type="service" id="templating" />
+            </call>
+            <call method="setMailer">
+                <argument type="service" id="mailer" />
+            </call>
+            <call method="setEmailFrom">
+                <argument>nbastien@prestaconcept.net</argument>
+            </call>
+            <call method="setEmailTo">
+                <argument>nbastien@prestaconcept.net</argument>
+            </call>
         </service>
     </services>
 

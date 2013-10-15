@@ -8,9 +8,8 @@
 
         <p>{{ settings.intro|raw }}</p>
 
-        <div id="contact_form_messages">
+        <div id="contact_form_messages"></div>
 
-        </div>
         {% for notice_level in ['success','error','info', 'warning'] %}
             {% set session_var = 'flash_' ~ notice_level %}
             {% for flash in app.session.flashbag.get(session_var) %}

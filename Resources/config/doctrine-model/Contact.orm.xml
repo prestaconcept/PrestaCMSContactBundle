@@ -6,7 +6,7 @@
 
     <mapped-superclass name="Presta\CMSContactBundle\Model\Contact">
 
-        <field name="name" column="username" type="string" length="255" />
+        <field name="name" column="name" type="string" length="255" />
         <field name="email" column="email" type="string" length="255" />
         <field name="createdAt" column="created_at" type="datetime" />
 

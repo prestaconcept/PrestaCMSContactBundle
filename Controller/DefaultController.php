@@ -39,11 +39,11 @@ class DefaultController extends Controller
         if ($form->isValid()) {
             $this->container->get('presta_cms_contact.manager.contact')->handle($form);
 
-            $this->get('session')->setFlash('flash_success', 'form.message.success');
+            $this->get('session')->getFlashBag()->add('flash_success', 'form.message.success');
         } else {
-            $this->get('session')->setFlash('flash_error', 'form.message.error');
+            $this->get('session')->getFlashBag()->add('flash_error', 'form.message.error');
         }
 
-        return $this->render('PrestaCMSContactBundle:Default:submit.html.twig');
+        return $this->render('PrestaCMSContactBundle:Default:submit.html.twig', array('form' => $form->createView()));
     }
 }

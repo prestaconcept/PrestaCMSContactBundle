@@ -54,6 +54,14 @@
                 <source>email.subject</source>
                 <target>New message</target>
             </trans-unit>
+            <trans-unit id="form.message.success">
+                <source>form.message.success</source>
+                <target>Your message has been sent. Thanks!</target>
+            </trans-unit>
+            <trans-unit id="form.message.error">
+                <source>form.message.error</source>
+                <target>Please correct your input and send again</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

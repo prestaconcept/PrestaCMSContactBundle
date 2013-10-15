@@ -5,9 +5,30 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="presta_cms_contact.persistence.manager_type">doctrine_orm</parameter>
+        <parameter key="presta_cms_contact.model_manager_name">default</parameter>
         <parameter key="presta_cms_contact.model.contact.class">Presta\CMSContactBundle\Doctrine\Orm\Contact</parameter>
         <parameter key="presta_cms_contact.model.message.class">Presta\CMSContactBundle\Doctrine\Orm\Message</parameter>
+        <parameter key="presta_cms_contact.manager.contact.class">Presta\CMSContactBundle\Doctrine\ContactManager</parameter>
     </parameters>
 
+    <services>
+        <service id="presta_cms_contact.entity_manager" factory-service="doctrine" factory-method="getManager" class="Doctrine\ORM\EntityManager" public="false">
+            <argument>%presta_cms_contact.model_manager_name%</argument>
+        </service>
+
+        <service id="presta_cms_contact.manager.contact" class="%presta_cms_contact.manager.contact.class%">
+            <call method="setStrategy">
+                <argument type="service" id="presta_cms_contact.strategy.email" />
+            </call>
+            <call method="setModelClassName">
+                <argument>%presta_cms_contact.model.contact.class%</argument>
+            </call>
+            <call method="setModelMessageClassName">
+                <argument>%presta_cms_contact.model.message.class%</argument>
+            </call>
+            <call method="setObjectManager">
+                <argument type="service" id="presta_cms_contact.entity_manager" />
+            </call>
+        </service>
+    </services>
 </container>

@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         // Put the results in a div
         posting.done(function( data ) {
-            $("#contact_form").parent().html( data );
+            $("#contact_form_messages").html( data );
         });
     });
 });
