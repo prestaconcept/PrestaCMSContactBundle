@@ -19,16 +19,22 @@
             {% endfor %}
         {% endfor %}
 
-        {{ form_label(form.name) }}
-        {{ form_widget(form.name) }}
-
-        {{ form_label(form.email) }}
-        {{ form_widget(form.email) }}
-
-        {{ form_label(form.message) }}
-        {{ form_widget(form.message) }}
+        <div class="form-item">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="form-item">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="form-item">
+            {{ form_label(form.message) }}
+            {{ form_widget(form.message) }}
+        </div>
 
         {{ form_rest(form) }}
-        <input type="submit" value="{{ 'form.label.submit' | trans }}" />
+        <div class="form-actions">
+            <input type="submit" value="{{ 'form.label.submit' | trans }}" class="button form-submit"/>
+        </div>
     </form>
 {% endblock %}
