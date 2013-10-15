@@ -1,0 +1,10 @@
+{% trans_default_domain "PrestaCMSContactBundle" %}
+
+{% for notice_level in ['success','error','info', 'warning'] %}
+    {% set session_var = 'flash_' ~ notice_level %}
+    {% for flash in app.session.flashbag.get(session_var) %}
+        <div class="alert {{ 'alert-' ~ notice_level }}">
+            {{ flash|trans }}
+        </div>
+    {% endfor %}
+{% endfor %}
