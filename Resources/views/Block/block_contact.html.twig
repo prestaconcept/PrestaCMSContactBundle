@@ -1,0 +1,35 @@
+{% extends 'PrestaCMSCoreBundle:Block:base_block.html.twig' %}
+
+{% trans_default_domain "PrestaCMSContactBundle" %}
+
+{% block block %}
+    <form action="{{ path('presta_cms_contact_submit') }}" method="post" {{ form_enctype(form) }} id="contact_form">
+        <h2>{{ settings.title|raw }}</h2>
+
+        <p>{{ settings.intro|raw }}</p>
+
+        <div id="contact_form_messages">
+
+        </div>
+        {% for notice_level in ['success','error','info', 'warning'] %}
+            {% set session_var = 'flash_' ~ notice_level %}
+            {% for flash in app.session.flashbag.get(session_var) %}
+                <div class="alert {{ 'alert-' ~ notice_level }}">
+                    {{ flash|trans }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
+
+        {{ form_rest(form) }}
+        <input type="submit" value="{{ 'form.label.submit' | trans }}" />
+    </form>
+{% endblock %}

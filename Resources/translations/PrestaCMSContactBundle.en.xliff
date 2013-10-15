@@ -35,8 +35,24 @@
                 <target>Email</target>
             </trans-unit>
             <trans-unit id="form.label.message">
-                <source>form.label.email</source>
+                <source>form.label.message</source>
                 <target>Message</target>
+            </trans-unit>
+            <trans-unit id="form.label.submit">
+                <source>form.label.submit</source>
+                <target>Send</target>
+            </trans-unit>
+            <trans-unit id="block.default.title">
+                <source>block.default.title</source>
+                <target>Contact us</target>
+            </trans-unit>
+            <trans-unit id="block.default.intro">
+                <source>block.default.intro</source>
+                <target>Feel free to send us a message.</target>
+            </trans-unit>
+            <trans-unit id="email.subject">
+                <source>email.subject</source>
+                <target>New message</target>
             </trans-unit>
         </body>
     </file>

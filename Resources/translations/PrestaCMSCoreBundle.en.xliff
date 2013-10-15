@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="CmfMenuBundle.en.xliff">
+        <body>
+            <trans-unit id="block.title.presta_cms_contact.block.contact">
+                <source>block.title.presta_cms_contact.block.contact</source>
+                <target>Contact form</target>
+            </trans-unit>
+            <trans-unit id="block.description.presta_cms_contact.block.contact">
+                <source>block.description.presta_cms_contact.block.contact</source>
+                <target>A a contact form to your page. Let's you define a strategy for handling form submission.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
