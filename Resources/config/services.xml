@@ -7,6 +7,8 @@
         <parameter key="presta_cms_contact.form.contact.class">Presta\CMSContactBundle\Form\Type\ContactType</parameter>
         <parameter key="presta_cms_contact.block.contact.class">Presta\CMSContactBundle\Block\ContactBlockService</parameter>
         <parameter key="presta_cms_contact.strategy.email.class">Presta\CMSContactBundle\Strategy\EmailStrategy</parameter>
+        <parameter key="presta_cms_contact.strategy.email.from">no-reply@prestaconcept.net</parameter>
+        <parameter key="presta_cms_contact.strategy.email.to">no-reply@prestaconcept.net</parameter>
     </parameters>
 
     <services>
@@ -33,10 +35,10 @@
                 <argument type="service" id="mailer" />
             </call>
             <call method="setEmailFrom">
-                <argument>nbastien@prestaconcept.net</argument>
+                <argument>%presta_cms_contact.strategy.email.from%</argument>
             </call>
             <call method="setEmailTo">
-                <argument>nbastien@prestaconcept.net</argument>
+                <argument>%presta_cms_contact.strategy.email.to%</argument>
             </call>
         </service>
     </services>
