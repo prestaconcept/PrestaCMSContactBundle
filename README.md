@@ -7,6 +7,7 @@ PrestaCMSContactBundle
 [![Total Downloads](https://poser.pugx.org/presta/cms-contact-bundle/downloads.png)](https://packagist.org/packages/presta/cms-contact-bundle)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e35671f4-a083-4780-b435-c85b9ce3c56c/big.png)](https://insight.sensiolabs.com/projects/e35671f4-a083-4780-b435-c85b9ce3c56c)
+[![knpbundles.com](http://knpbundles.com/prestaconcept/PrestaCMSContactBundle/badge)](http://knpbundles.com/prestaconcept/PrestaCMSContactBundle)
 
 #Overview #
 
