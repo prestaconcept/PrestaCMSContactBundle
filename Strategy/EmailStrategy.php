@@ -88,7 +88,7 @@ class EmailStrategy implements StrategyInterface
      */
     public function handle(Message $message)
     {
-        $message = \Swift_Message::newInstance()
+        $mail = \Swift_Message::newInstance()
             ->setSubject($this->translator->trans('email.subject', array(), 'PrestaCMSContactBundle'))
             ->setFrom($this->emailFrom)
             ->setTo($this->emailTo)
@@ -99,6 +99,6 @@ class EmailStrategy implements StrategyInterface
                 )
             );
 
-        $this->mailer->send($message);
+        $this->mailer->send($mail);
     }
 }
