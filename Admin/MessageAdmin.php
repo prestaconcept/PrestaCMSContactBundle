@@ -65,7 +65,7 @@ class MessageAdmin extends Admin
         $listMapper
             ->add('shortContent')
             ->add('createdAt')
-            ->add('_action', 'actions', array('actions' => array('view' => array())));
+            ->add('_action', 'actions', array('actions' => array('show' => array())));
     }
 
     /**
