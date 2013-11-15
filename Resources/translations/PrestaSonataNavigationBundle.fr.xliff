@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="PrestaCMSFAQBundle.en.xliff">
+        <body>
+            <trans-unit id="navigation.cms.contact.label">
+                <source>navigation.cms.contact.label</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="navigation.cms.contact.description">
+                <source>navigation.cms.contact.description</source>
+                <target>Gestion des contact et messages</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

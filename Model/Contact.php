@@ -126,4 +126,13 @@ abstract class Contact
     {
         return $this->messages;
     }
+
+    /**
+     * @param Message $message
+     */
+    public function addMessage(Message $message)
+    {
+        $message->setContact($this);
+        $this->messages->add($message);
+    }
 }

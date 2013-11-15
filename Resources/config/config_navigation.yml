@@ -1,0 +1,8 @@
+
+presta_sonata_navigation:
+    menu:
+        items:
+            cms:
+                children:
+                    contact:
+                        route: admin_presta_cmscontact_contact_list
