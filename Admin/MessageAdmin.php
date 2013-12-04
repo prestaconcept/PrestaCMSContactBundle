@@ -51,6 +51,20 @@ class MessageAdmin extends Admin
         if (!$this->isChild()) {
             $datagridMapper->add('contact');
         }
+
+        $datagridMapper->add(
+            'createdAt',
+            'doctrine_orm_date_range',
+            array(
+                'field_options' => array(
+                    'widget' => 'single_text',
+                    'format' => 'dd/MM/yyyy',
+                    'attr'   => array(
+                        'class' => 'datepicker',
+                    ),
+                )
+            )
+        );
     }
 
     /**
