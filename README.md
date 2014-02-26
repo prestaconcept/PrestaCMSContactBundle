@@ -11,10 +11,13 @@ PrestaCMSContactBundle
 
 #Overview #
 
-[WIP] PrestaCMSContactBundle adds contact management to PrestaCMS.
+PrestaCMSContactBundle adds contact management to PrestaCMS.
 
 :speech_balloon: If you want to have some informations about the projet progression you can register to our [google group][3]
 
+## Issue tracker ##
+
+:clipboard: Issues are managed in [prestaconcept/open-source-management](https://github.com/prestaconcept/open-source-management) to centralize our open source activity.
 
 ## Documentation ##
 
