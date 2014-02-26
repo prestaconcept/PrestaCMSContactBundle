@@ -11,7 +11,10 @@ PrestaCMSContactBundle
 
 #Overview #
 
-PrestaCMSContactBundle adds contact management to PrestaCMS.
+PrestaCMSContactBundle adds contact form to your CMS. 
+Contacts and messages are saved and administrated with Sonata. 
+
+You can implement your own strategy to fit your needs.
 
 :speech_balloon: If you want to have some informations about the projet progression you can register to our [google group][3]
 
